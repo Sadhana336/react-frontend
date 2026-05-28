@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(-45deg, #ffd6e0, #d6f0ff, #fbe7c6, #e0c3fc);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  min-height: 100vh;
+}
+
+@keyframes gradientBG {
+
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+
+}
+
+.container {
+
+  width: 80%;
+  max-width: 700px;
+
+  margin: 50px auto;
+
+  background: rgba(255, 255, 255, 0.25);
+
+  backdrop-filter: blur(10px);
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+
+}
+
+h1 {
+
+  text-align: center;
+
+  color: #444;
+
+}
+
+input {
+
+  width: 100%;
+
+  padding: 12px;
+
+  margin-top: 10px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  font-size: 16px;
+
+}
+
+button {
+
+  margin-top: 15px;
+
+  padding: 12px 20px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  background: #7b8cff;
+
+  color: white;
+
+  font-size: 16px;
+
+  transition: 0.3s;
+
+}
+
+button:hover {
+
+  transform: scale(1.05);
+
+}
+
+.student-card {
+
+  background: rgba(255,255,255,0.5);
+
+  padding: 15px;
+
+  margin-top: 20px;
+
+  border-radius: 15px;
+
+}
+
+.dark {
+
+  background: rgba(30, 30, 30, 0.8);
+
+  color: white;
+
+}
+
+.dark input {
+
+  background: #333;
+
+  color: white;
+
+}
+
+.dark .student-card {
+
+  background: rgba(255,255,255,0.1);
+
+}
+.dark h1 {
+
+  color: white;
+
+}
