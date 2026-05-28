@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Login from "./Login";
 
+const BASE_URL = "https://django-backend-gjnx.onrender.com";
+
 function App() {
   const [students, setStudents] = useState([]);
   const [name, setName] = useState("");
@@ -24,7 +26,6 @@ function App() {
     },
   };
 
-  // FIXED useEffect (no ESLint error)
   useEffect(() => {
     if (isLoggedIn) {
       fetchStudents();
@@ -34,7 +35,7 @@ function App() {
 
   const fetchStudents = () => {
     axios
-      .get("http://127.0.0.1:8000/api/", config)
+      .get(`${BASE_URL}/api/`, config)
       .then((response) => {
         setStudents(response.data);
       })
@@ -52,7 +53,7 @@ function App() {
     if (editingId) {
       axios
         .put(
-          `http://127.0.0.1:8000/updateapi/${editingId}/`,
+          `${BASE_URL}/updateapi/${editingId}/`,
           { name, age, department },
           config
         )
@@ -66,7 +67,7 @@ function App() {
     } else {
       axios
         .post(
-          "http://127.0.0.1:8000/api/",
+          `${BASE_URL}/api/`,
           { name, age, department },
           config
         )
@@ -81,7 +82,7 @@ function App() {
 
   const deleteStudent = (id) => {
     axios
-      .delete(`http://127.0.0.1:8000/deleteapi/${id}/`, config)
+      .delete(`${BASE_URL}/deleteapi/${id}/`, config)
       .then(() => {
         fetchStudents();
       });
