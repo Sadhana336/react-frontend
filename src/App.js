@@ -49,15 +49,12 @@ function App() {
 
   };
 
-  useEffect(() => {
-
-    if (isLoggedIn) {
-
-      fetchStudents();
-
-    }
-
-  }, [isLoggedIn]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+useEffect(() => {
+  if (isLoggedIn) {
+    fetchStudents();
+  }
+}, [isLoggedIn]);
 
   const fetchStudents = () => {
 
